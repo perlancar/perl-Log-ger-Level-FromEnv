@@ -1,4 +1,4 @@
-package Log::ger::LevelFromEnv;
+package Log::ger::Level::FromEnv;
 
 # DATE
 # VERSION
@@ -37,7 +37,7 @@ if (my $ll = $ENV{LOG_LEVEL}) {
 =head1 SYNOPSIS
 
  use Log::ger;
- use Log::ger::LevelFromEnv;
+ use Log::ger::Level::FromEnv;
 
  log_warn "blah ...";
 
