@@ -8,27 +8,27 @@ use Log::ger ();
 if (my $ll = $ENV{LOG_LEVEL}) {
     if ($ll eq 'off' || $ll == 0) {
         $Log::ger::Current_Level = 0;
-    } elsif ($ll eq 'fatal' || $ll == 1) {
-        $Log::ger::Current_Level = 1;
-    } elsif ($ll eq 'error' || $ll == 2) {
-        $Log::ger::Current_Level = 2;
-    } elsif ($ll eq 'warn' || $ll eq 'warning' || $ll == 3) {
-        $Log::ger::Current_Level = 3;
-    } elsif ($ll eq 'info' || $ll == 4) {
-        $Log::ger::Current_Level = 4;
-    } elsif ($ll eq 'debug' || $ll == 5) {
-        $Log::ger::Current_Level = 5;
-    } elsif ($ll eq 'trace' || $ll == 6) {
-        $Log::ger::Current_Level = 6;
+    } elsif ($ll eq 'fatal' || $ll == 10) {
+        $Log::ger::Current_Level = 10;
+    } elsif ($ll eq 'error' || $ll == 20) {
+        $Log::ger::Current_Level = 20;
+    } elsif ($ll eq 'warn' || $ll eq 'warning' || $ll == 30) {
+        $Log::ger::Current_Level = 30;
+    } elsif ($ll eq 'info' || $ll == 40) {
+        $Log::ger::Current_Level = 40;
+    } elsif ($ll eq 'debug' || $ll == 50) {
+        $Log::ger::Current_Level = 50;
+    } elsif ($ll eq 'trace' || $ll == 60) {
+        $Log::ger::Current_Level = 60;
     }
 } elsif ($ENV{TRACE}) {
-    $Log::ger::Current_Level = 6;
+    $Log::ger::Current_Level = 60;
 } elsif ($ENV{DEBUG}) {
-    $Log::ger::Current_Level = 5;
+    $Log::ger::Current_Level = 50;
 } elsif ($ENV{VERBOSE}) {
-    $Log::ger::Current_Level = 4;
+    $Log::ger::Current_Level = 40;
 } elsif ($ENV{QUIET}) {
-    $Log::ger::Current_Level = 2;
+    $Log::ger::Current_Level = 20;
 }
 
 1;
@@ -46,10 +46,10 @@ if (my $ll = $ENV{LOG_LEVEL}) {
 
 This module sets C<$Log::ger::Current_Level> based on hints from several
 environment variables: C<LOG_LEVEL> (for example, if set to C<warn> or
-C<warning> will set the log level to warning (3)), C<TRACE> (if true, will set
-log level to trace (6)), C<DEBUG> (if true, will set log level to debug (5)),
-C<VERBOSE> (if true, will set log level to info (4)), C<QUIET> (if true, will
-set log level to error (2)).
+C<warning> will set the log level to warning (30)), C<TRACE> (if true, will set
+log level to trace (60)), C<DEBUG> (if true, will set log level to debug (50)),
+C<VERBOSE> (if true, will set log level to info (40)), C<QUIET> (if true, will
+set log level to error (20)).
 
 This is convenient for CLI programs.
 
