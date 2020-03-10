@@ -7,7 +7,7 @@ package Log::ger::Level::FromEnv;
 
 use Log::ger::Util;
 
-if (defined $ll = $ENV{LOG_LEVEL}) {
+if (defined($ll = $ENV{LOG_LEVEL})) {
     Log::ger::Util::set_level($ll);
 } elsif ($ENV{TRACE}) {
     Log::ger::Util::set_level("trace");
